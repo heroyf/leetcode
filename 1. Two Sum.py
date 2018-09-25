@@ -6,7 +6,7 @@ class Solution:
         :rtype: List[int]
         """
         lens=len(nums)
-        for i in range(0,lens):
-            for j in range(1,lens+1):
-                if nums[i]+nums[j]==target:
-                    return [i,j]
+        for i in range(lens):
+            j=nums[i]
+            if target-j in nums and i != nums.index(target-j):
+                return (i,nums.index(target-j))
